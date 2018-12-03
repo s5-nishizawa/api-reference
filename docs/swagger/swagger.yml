@@ -1,0 +1,14 @@
+swagger: "2.0"
+schemes:
+  - http
+  - https
+consumes:
+  - multipart/form-data
+  - application/json
+produces:
+  - application/json
+host: hoge.com
+basePath: /
+paths:
+  /contractTypes:
+    $ref: "./operations.contractTypes.yml#/determine"

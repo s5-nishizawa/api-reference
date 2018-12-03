@@ -1,0 +1,46 @@
+PostDetermineRequestBody:
+  type: object
+  properties:
+    contractTypeId:
+      type: integer
+      description: "契約書類型ID"
+      example: 1234
+    provisionContent:
+      type: string
+      description: "条文内容"
+      example: |
+        甲または乙は、事前に相手方の書面による承諾を得ることなく、機密情報を自己の商品に用いる等、本検討の目的以外に転用及び流用してはならない。
+  required: [contractTypeId, provisionContent]
+
+PostDetermineResponse200:
+  properties:
+    regulationTypeIds:
+      type: integer
+      description: "条文書類型ID"
+      example: 100
+  required: [regulationTypeIds]
+
+PostDetermineResponse400:
+  properties:
+    errorCode:
+      type: integer
+      description: "エラーコード"
+      example: 100
+    errorMessage:
+      type: string
+      description: "エラーメッセージ"
+      example: "契約書類型IDは必須です"
+  required: [errorCode]
+
+PostDetermineResponse500:
+  properties:
+    errorCode:
+      type: integer
+      description: "エラーコード"
+      example: 100
+    errorMessage:
+      type: string
+      description: "エラーメッセージ"
+      example: "不明なエラーが発生しました。"
+  required: [errorCode]
+

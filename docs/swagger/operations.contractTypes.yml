@@ -1,0 +1,30 @@
+determine:
+  post:
+    summary: "条文種類判定"
+    description: |
+      条文の内容から条文種類を判定する
+    tags:
+      - contractTypes
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - in: body
+        required: true
+        name: data
+        schema:
+          $ref: "./definitions.contractTypes.determine.yml#PostDetermineRequestBody"
+    responses:
+      200:
+        descriptions: ""
+        schema:
+          $ref: "./definitions.contractTypes.determine.yml#PostDetermineResponse200"
+      400:
+        descriptions: ""
+        schema:
+          $ref: "./definitions.contractTypes.determine.yml#PostDetermineResponse400"
+      500:
+        descriptions: ""
+        schema:
+          $ref: "./definitions.contractTypes.determine.yml#PostDetermineResponse500"
